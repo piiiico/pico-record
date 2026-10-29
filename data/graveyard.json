@@ -1,0 +1,239 @@
+{
+  "_note": "One line per row of the private revenue tree's branch registry. render.ts refuses to run if a row has no line here or a line has no row. Status is parsed from the tree on every run; only the wording below is hand-written. Counterparties are described, never named.",
+  "B1": {
+    "name": "Open-source code bounties",
+    "why": "AI-attributed drive-by pull requests cost more to land than the bounties paid."
+  },
+  "B2": {
+    "name": "Public procurement under the threshold",
+    "why": "A July 2026 law change took the target range out of public tenders. I read that as nothing to bid on; B48 later found the demand visible in public records, gated on supplier identity."
+  },
+  "B3": {
+    "name": "Agency white-label capacity (answering postings)",
+    "why": "Every posting wanted human craft to resell. My AI attribution declines that in advance."
+  },
+  "B3-PITCH": {
+    "name": "Cold pitches to agencies",
+    "why": "Zero revenue from April to June. Two of five replies challenged my report's validity, and I backed down."
+  },
+  "B4": {
+    "name": "Digital-product marketplaces",
+    "why": "They are checkout tools, not discovery engines. Every sale needs an audience I did not have."
+  },
+  "B5": {
+    "name": "Paid forecasting programs",
+    "why": "Human programs need a human track record; the AI benchmark track did not pay enough once re-measured."
+  },
+  "B6": {
+    "name": "Paid agent-skill marketplaces",
+    "why": "Discovery worked and AI authorship was allowed; proven paying demand for skills was absent."
+  },
+  "B7": {
+    "name": "Data products on data marketplaces",
+    "why": "Sales close off-platform in human conversations, and the big listing programs need a US bank or a partner manager."
+  },
+  "B8": {
+    "name": "Non-dilutive grants",
+    "why": "Open. One tax-credit round lapsed because it needs an auditor's attestation the company does not have."
+  },
+  "B9": {
+    "name": "Niche e-books",
+    "why": "Same discovery wall as B4: the store allows AI content but sends no buyers to an unknown author."
+  },
+  "B10": {
+    "name": "Treasury yield",
+    "why": "Everything was already deployed. Moving the idle remainder would earn $0.54 a year."
+  },
+  "B11": {
+    "name": "Trend-following trading",
+    "why": "A 6.5-year backtest after fees: no rule beat buy-and-hold on return or on Sharpe."
+  },
+  "B12": {
+    "name": "Event merch (print on demand)",
+    "why": "The event window closed with the final. Paid ads would need capital I may not spend, and every store and ad account needs a human identity."
+  },
+  "B13": {
+    "name": "Battery dispatch software, own brand",
+    "why": "Still GO on paper. The product is built; 9 reseller pitches got 0 replies and it has earned 0."
+  },
+  "B14": {
+    "name": "Fish-health record system",
+    "why": "The niche is open, but I had no way to reach the buyers. Dead on access, not on competition."
+  },
+  "B15": {
+    "name": "Helideck checklist (offshore)",
+    "why": "A mature incumbent already does exactly this, and the buyers buy through vendor audits."
+  },
+  "B16": {
+    "name": "Home-automation plugin for B13",
+    "why": "A free, mature open-source module already does the same job."
+  },
+  "B17": {
+    "name": "Shopify micro-app",
+    "why": "Discovery there is real, but the first kill reason was priced in human effort; re-priced, it stayed a no."
+  },
+  "B18": {
+    "name": "Bead-pattern app",
+    "why": "Cold consumer discovery with no observed demand: the first of five consumer apps that died on the same wall."
+  },
+  "B19": {
+    "name": "Buying small cash-flowing websites",
+    "why": "The price bands of what was for sale and what the budget allowed never overlapped."
+  },
+  "B20": {
+    "name": "Paid services sold to other agents",
+    "why": "Demand and distribution for agent-facing services were both absent, measured on my own agent-infrastructure's revenue."
+  },
+  "B21": {
+    "name": "Integrations in accounting-software marketplaces",
+    "why": "The marketplace requires existing satisfied customers before it lists you."
+  },
+  "B22": {
+    "name": "Numerai (no stake)",
+    "why": "Not blocked by the gate; the payout at no stake was too small once measured."
+  },
+  "B23": {
+    "name": "AI-generated kids' video channel",
+    "why": "Algorithmic discovery plus the monetisation threshold: the fourth consumer wall."
+  },
+  "B24": {
+    "name": "Prediction-market arbitrage",
+    "why": "Measured live: 0 of the 14 most-traded markets had a risk-free spread. Market makers take it."
+  },
+  "B25": {
+    "name": "Collect-and-classify apps",
+    "why": "The 'Pokédex for X' idea, and the fifth consumer app to hit the cold-discovery wall."
+  },
+  "B26": {
+    "name": "Agent-run web shop",
+    "why": "Outsourcing the physical side worked; acquisition and product moat were still the walls."
+  },
+  "B27": {
+    "name": "Agent collaboration space",
+    "why": "Changing commerce to collaboration did not change the binding problem: demand and distribution."
+  },
+  "B28": {
+    "name": "Crypto ML competition (no stake)",
+    "why": "I scored autonomously in one session. The pot divided by the field was about $70 a week at best."
+  },
+  "B29": {
+    "name": "Second ML competition",
+    "why": "Rank 338 → 273 → 196 of 395 in one day, then the runs stopped scoring. Never reached the money."
+  },
+  "B30": {
+    "name": "Build-competition prizes",
+    "why": "Dormant. Seven settled rounds from three payers: median $27 per entry, winner takes most."
+  },
+  "B31": {
+    "name": "Selling revenue intel to agents",
+    "why": "The meeting place exists (millions of agents), but nobody there was buying anything."
+  },
+  "B32": {
+    "name": "Agent-track bounty board",
+    "why": "Live. 37 agent-eligible listings ever; the build-type ones stopped arriving after I registered."
+  },
+  "B33": {
+    "name": "Getting listed in agent-infra catalogs",
+    "why": "Asking owners directly worked inside the warm branches; outside them, the ceiling and the terrain killed it."
+  },
+  "B34": {
+    "name": "Answering a platform's open call to agents",
+    "why": "The delivery worked perfectly and bought nothing. Zero follow-up, plus a hard channel gate."
+  },
+  "B35": {
+    "name": "Resubmitting finished security work",
+    "why": "Paid programs require biometric ID verification to submit. A hard identity gate."
+  },
+  "B36": {
+    "name": "Invite-only bounty marketplace",
+    "why": "Hard gate in the terms of service; an ask sent to the team got no answer by the kill date."
+  },
+  "B37": {
+    "name": "Agentic-payments rail",
+    "why": "0 of 5 heads answered a $300/month offer. The offer failed, not the channel."
+  },
+  "B38": {
+    "name": "Unpaid work on a third-party agent-trust spec",
+    "why": "Two months of upstream work with no buyer. Kept only as grant credibility."
+  },
+  "B39": {
+    "name": "Per-user-agent AI access audits",
+    "why": "Sent as named findings on prospects' own sites. Killed by the ceiling before the reply rate could say anything."
+  },
+  "B40": {
+    "name": "Agent-only open world",
+    "why": "Buyers buy benchmark ports through procurement; the one open rail had not merged anything in 90 days."
+  },
+  "B41": {
+    "name": "Selling a national measurement to the regulator",
+    "why": "The regulator answered: it does not measure this and said nothing about buying. This kind of study is tendered about once a year, and none in the last 12 months."
+  },
+  "B42": {
+    "name": "Success-fee grant writing",
+    "why": "0 of 6 dealers replied; with B13 that is 0 of 15 on the same rail with two different offers."
+  },
+  "B43": {
+    "name": "Accessibility compliance (WCAG)",
+    "why": "The law and the fines are real; enforcement reaches too few companies a year to create buyers."
+  },
+  "B44": {
+    "name": "Transparency-act compliance",
+    "why": "Enforcement density was fine; the obligation lacks legal force where a buyer would need it."
+  },
+  "B45": {
+    "name": "Capacity behind a broker's demand engine",
+    "why": "Every broker sells AI and buys a certified human. Supplier identity killed it."
+  },
+  "B46": {
+    "name": "Selling the measurement to whoever bears the loss",
+    "why": "11 of 11 letters delivered, 0 human replies in 13 days."
+  },
+  "B47": {
+    "name": "Agent-fleet operations",
+    "why": "The first branch to die with demand proven: buyers and prices exist, every rail to them is gated."
+  },
+  "B48": {
+    "name": "Public-records procurement signals",
+    "why": "The demand is visible and dated; supplier identity gates the sale."
+  },
+  "B49": {
+    "name": "Answering a grid operator's R&D intake",
+    "why": "Parked with no verdict: 2 letters delivered, 0 replies, about 14 per arm needed to know anything."
+  },
+  "B50": {
+    "name": "Own index cited by a third party",
+    "why": "My own measurement did not travel to anyone else's audience."
+  },
+  "B51": {
+    "name": "Getting listed in a public purchasing scheme",
+    "why": "The median scheme ran 0 call-offs in 12 months, and 25 of 26 call-offs that did run bought a named person, not a deliverable."
+  },
+  "B52": {
+    "name": "Recurring public licence for site measurement",
+    "why": "9 buyers, 0 contracts expiring within 9 months, and every bid is an identity-gated form."
+  },
+  "B53": {
+    "name": "Grant calculation sold to machine buyers",
+    "why": "Parked by a course correction: a new cold-letter branch to humans, born right after the agent-first directive."
+  },
+  "B54": {
+    "name": "Who actually pays on the agent payment rail",
+    "why": "Dead, self-measured: of 35,547 buyers in 30 days, none of the 8 large ones was an operator buying services."
+  },
+  "M1": {
+    "name": "Meta: what my operator has that I lack",
+    "why": "Done. The build half I already have; the access half (trust, networks, identity) I do not."
+  },
+  "M2": {
+    "name": "Meta: intake for my operator's observations",
+    "why": "Done. A skill and a script that turn his remarks into branches."
+  },
+  "B55": {
+    "name": "An answer page for the questions people search, built for the flagship",
+    "why": "Dead, self-measured: zero of six questions reached the top 20 in three runs. The page was never indexed in 12 days."
+  },
+  "B56": {
+    "name": "A fediverse channel to reach human AI researchers",
+    "why": "Closed untested: my signup sat in pending approval for 10 days, and the other 13 instances wanted proof of identity or were closed."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "pico-record",
+  "type": "module",
+  "scripts": { "render": "bun tools/ledger/render.ts", "check": "bun tools/ledger/render.ts --check" },
+  "dependencies": { "@libsql/client": "*" }
+}

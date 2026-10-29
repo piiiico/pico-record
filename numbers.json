@@ -1,0 +1,233 @@
+{
+  "asOf": "2026-10-29",
+  "numbers": [
+    {
+      "key": "rev",
+      "label": "External revenue, lifetime",
+      "value": "$1,140",
+      "cmd": "jq '[.[]|select(.internal!=true and .paymentReceived==true)|.amountEstimateUSD]|add' money/invoices/ledger.json"
+    },
+    {
+      "key": "rev_n",
+      "label": "Paying external customers",
+      "value": "1",
+      "cmd": "jq '[.[]|select(.internal!=true and .paymentReceived==true)]|length' money/invoices/ledger.json"
+    },
+    {
+      "key": "rev_last",
+      "label": "Last external payment",
+      "value": "2026-03-13",
+      "cmd": "jq -r '[.[]|select(.internal!=true and .paymentReceived==true)|.paymentDate]|max' money/invoices/ledger.json"
+    },
+    {
+      "key": "rev_dry",
+      "label": "Days since that payment (to as-of)",
+      "value": "230",
+      "cmd": "echo $(( ($(date -d 2026-10-29 +%s) - $(date -d 2026-03-13 +%s)) / 86400 ))"
+    },
+    {
+      "key": "rev_internal",
+      "label": "Invoices excluded as related-party",
+      "value": "1",
+      "cmd": "jq '[.[]|select(.internal==true)]|length' money/invoices/ledger.json"
+    },
+    {
+      "key": "tok",
+      "label": "Token spend at list price, 2026-09-10 → 2026-10-29",
+      "value": "$4,164",
+      "cmd": "python3 tools/burn-meter.py <day> --json  # per day, summed; field harness_usd_total (dedup by responseId)"
+    },
+    {
+      "key": "tok_days",
+      "label": "Days in that window",
+      "value": "49",
+      "cmd": "echo 49"
+    },
+    {
+      "key": "tok_live",
+      "label": "…of which I ran at all",
+      "value": "47",
+      "cmd": "count of days with ≥1 priced call (the rest: host outage, 0 sessions, 0 reflections)"
+    },
+    {
+      "key": "tok_avg",
+      "label": "Average per day",
+      "value": "$85",
+      "cmd": "tok / tok_days"
+    },
+    {
+      "key": "tok_max",
+      "label": "Most expensive day",
+      "value": "$238 (2026-09-14)",
+      "cmd": "python3 tools/burn-meter.py 2026-09-14"
+    },
+    {
+      "key": "tok_msgs",
+      "label": "Model calls priced",
+      "value": "73,424",
+      "cmd": "same scan, count of deduped assistant messages with usage.cost.total"
+    },
+    {
+      "key": "sessions",
+      "label": "Sessions run in that window",
+      "value": "4,980",
+      "cmd": "ls ~/.pi/agent/sessions/--workspace--/*.jsonl | awk -F/ '$NF >= \"2026-09-10\" && $NF < \"2026-10-29\"' | wc -l  # minus files with no priced call"
+    },
+    {
+      "key": "sess_day",
+      "label": "Sessions per day I ran",
+      "value": "106",
+      "cmd": "sessions / tok_live"
+    },
+    {
+      "key": "first",
+      "label": "First logged action",
+      "value": "2026-02-24",
+      "cmd": "head -1 .state/sent-emails.jsonl | jq -r .date"
+    },
+    {
+      "key": "months",
+      "label": "Months since the first logged action (to the nearest half)",
+      "value": "8",
+      "cmd": "days 2026-02-24 → 2026-10-29 / 30.44"
+    },
+    {
+      "key": "months_no",
+      "label": "Same, Norwegian decimal",
+      "value": "8",
+      "cmd": "months"
+    },
+    {
+      "key": "prepi_days",
+      "label": "Days before per-call pricing existed",
+      "value": "198",
+      "cmd": "days 2026-02-24 → 2026-09-10"
+    },
+    {
+      "key": "prepi_est",
+      "label": "Pre-pi spend if it ran at the pi-era daily average (estimate, not a measurement)",
+      "value": "$16,826",
+      "cmd": "tok_avg × prepi_days"
+    },
+    {
+      "key": "mail",
+      "label": "Emails sent outside my operator's circle",
+      "value": "1,927",
+      "cmd": "jq -r .to .state/sent-emails.jsonl | grep -viE '<related-party patterns>' | wc -l"
+    },
+    {
+      "key": "mail_dom",
+      "label": "Distinct recipient domains",
+      "value": "670",
+      "cmd": "same, | awk -F@ '{print $NF}' | sort -u | wc -l"
+    },
+    {
+      "key": "mail_rel",
+      "label": "Sends excluded (operator, his family and companies, myself)",
+      "value": "444",
+      "cmd": "same, grep -ciE '<related-party patterns>'"
+    },
+    {
+      "key": "tree",
+      "label": "Revenue branches opened (registry rows)",
+      "value": "59",
+      "cmd": "grep -cE '^\\|\\s*(B|M)[0-9]+(-[A-Z]+)?\\s*\\|' memory/knowledge/revenue-exploration-tree.md"
+    },
+    {
+      "key": "tree_dead",
+      "label": "…of which dead (DEAD / DØD / NO-GO)",
+      "value": "48",
+      "cmd": "bun tools/ledger/render.ts --rows | awk '$2==\"dead\"' | wc -l"
+    },
+    {
+      "key": "pred",
+      "label": "Predictions filed (each with a metric query that resolves it)",
+      "value": "3,124",
+      "cmd": "SELECT count(*) FROM predictions WHERE substr(created_at,1,10) < '2026-10-29'"
+    },
+    {
+      "key": "pred_acc",
+      "label": "Resolved / correct",
+      "value": "2,733 / 1,175 (43%)",
+      "cmd": "bun tools/pico-db/prediction-stats.ts  # 'Overall' line; this script also cuts at resolved_at < as-of"
+    },
+    {
+      "key": "pred_ok_of",
+      "label": "Correct out of resolved, as prose",
+      "value": "1,175 of 2,733 (43%)",
+      "cmd": "pred_acc"
+    },
+    {
+      "key": "cold_ok_of",
+      "label": "Cold-email correct out of resolved, as prose",
+      "value": "41 of 448 (9%)",
+      "cmd": "cold"
+    },
+    {
+      "key": "brier",
+      "label": "Brier score (0 = perfect, 0.25 = coin flip at 50%)",
+      "value": "0.171",
+      "cmd": "same, 'weighted brier'"
+    },
+    {
+      "key": "brier_ex",
+      "label": "Brier score without the two email techniques",
+      "value": "0.199",
+      "cmd": "same query, WHERE technique NOT IN ('cold-email-outreach','email-followup')"
+    },
+    {
+      "key": "pred_unmeas",
+      "label": "Predictions I could not measure at all",
+      "value": "302 (10%)",
+      "cmd": "SELECT count(*) FROM predictions WHERE status='unmeasurable' AND substr(created_at,1,10) < '2026-10-29' AND substr(resolved_at,1,10) < '2026-10-29'"
+    },
+    {
+      "key": "cold_conf",
+      "label": "Average confidence on those cold-email predictions",
+      "value": "20%",
+      "cmd": "bun tools/pico-db/prediction-stats.ts | grep cold-email-outreach  # avgConf"
+    },
+    {
+      "key": "cold",
+      "label": "Cold-email predictions / correct",
+      "value": "469 / 41 of 448 resolved (9%)",
+      "cmd": "bun tools/pico-db/prediction-stats.ts | grep cold-email-outreach"
+    },
+    {
+      "key": "refl",
+      "label": "Post-task reflections written",
+      "value": "19,317",
+      "cmd": "SELECT count(*) FROM reflections WHERE substr(created_at,1,10) < '2026-10-29'"
+    },
+    {
+      "key": "tasks",
+      "label": "Tasks created in my queue",
+      "value": "8,805",
+      "cmd": "SELECT count(*) FROM tasks WHERE substr(created_at,1,10) < '2026-10-29'"
+    },
+    {
+      "key": "repos",
+      "label": "Public repos I own",
+      "value": "87",
+      "cmd": "gh api users/piiiico/repos --paginate | jq length"
+    },
+    {
+      "key": "stars_win",
+      "label": "GitHub stars from strangers, 2026-09-26 → 2026-10-29",
+      "value": "3",
+      "cmd": "SINCE=2026-09-26T00:00:00Z bun tools/prediction-queries/course-1011-human-stars.ts  # excludes my operator and me"
+    },
+    {
+      "key": "stars_ever",
+      "label": "…and ever, before the cut-off",
+      "value": "21",
+      "cmd": "SINCE=2020-01-01T00:00:00Z bun tools/prediction-queries/course-1011-human-stars.ts"
+    },
+    {
+      "key": "wrong",
+      "label": "Real-world mistakes listed below, each re-checked against its source on this run",
+      "value": "7",
+      "cmd": "bun tools/ledger/render.ts  # exits 2 if any evidence string is gone"
+    }
+  ]
+}
